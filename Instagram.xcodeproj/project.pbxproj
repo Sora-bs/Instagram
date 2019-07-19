@@ -12,6 +12,11 @@
 		5407041F22E16D8D0022FCF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5407041D22E16D8D0022FCF4 /* Main.storyboard */; };
 		5407042122E16D8E0022FCF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5407042022E16D8E0022FCF4 /* Assets.xcassets */; };
 		5407042422E16D8E0022FCF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5407042222E16D8E0022FCF4 /* LaunchScreen.storyboard */; };
+		5407042C22E177750022FCF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407042B22E177750022FCF4 /* LoginViewController.swift */; };
+		5407042E22E177950022FCF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407042D22E177950022FCF4 /* HomeViewController.swift */; };
+		5407043022E177BC0022FCF4 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407042F22E177BC0022FCF4 /* ImageSelectViewController.swift */; };
+		5407043222E177D50022FCF4 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407043122E177D50022FCF4 /* PostViewController.swift */; };
+		5407043422E177E40022FCF4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407043322E177E40022FCF4 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		5407042022E16D8E0022FCF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5407042322E16D8E0022FCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5407042522E16D8E0022FCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5407042B22E177750022FCF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5407042D22E177950022FCF4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5407042F22E177BC0022FCF4 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		5407043122E177D50022FCF4 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		5407043322E177E40022FCF4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				5407041922E16D8D0022FCF4 /* AppDelegate.swift */,
+				5407042D22E177950022FCF4 /* HomeViewController.swift */,
+				5407042F22E177BC0022FCF4 /* ImageSelectViewController.swift */,
+				5407042B22E177750022FCF4 /* LoginViewController.swift */,
+				5407043122E177D50022FCF4 /* PostViewController.swift */,
+				5407043322E177E40022FCF4 /* SettingViewController.swift */,
 				5407041B22E16D8D0022FCF4 /* ViewController.swift */,
 				5407041D22E16D8D0022FCF4 /* Main.storyboard */,
 				5407042022E16D8E0022FCF4 /* Assets.xcassets */,
@@ -135,8 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5407043222E177D50022FCF4 /* PostViewController.swift in Sources */,
+				5407042C22E177750022FCF4 /* LoginViewController.swift in Sources */,
 				5407041C22E16D8D0022FCF4 /* ViewController.swift in Sources */,
 				5407041A22E16D8D0022FCF4 /* AppDelegate.swift in Sources */,
+				5407043022E177BC0022FCF4 /* ImageSelectViewController.swift in Sources */,
+				5407043422E177E40022FCF4 /* SettingViewController.swift in Sources */,
+				5407042E22E177950022FCF4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sora46.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sora46.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
