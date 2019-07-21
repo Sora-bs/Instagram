@@ -65,20 +65,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     if let uid = Auth.auth().currentUser?.uid {
                         // PostDataクラスを生成して受け取ったデータを設定する
                         let postData = PostData(snapshot: snapshot, myId: uid)
-
-                        self.postArray.insert(postData, at: 0)
-                        
-                        // TableViewを再表示する
-                        self.tableView.reloadData()
-                    }
-                })
-                // 要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
-                postsRef.observe(.childChanged, with: { snapshot in
-                    print("DEBUG_PRINT: .childChangedイベントが発生しました。")
-                    
-                    if let uid = Auth.auth().currentUser?.uid {
-                        // PostDataクラスを生成して受け取ったデータを設定する
-                        let postData = PostData(snapshot: snapshot, myId: uid)
                         
                         // 保持している配列からidが同じものを探す
                         var index: Int = 0
