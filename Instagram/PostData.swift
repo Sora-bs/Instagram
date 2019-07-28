@@ -36,11 +36,12 @@ class PostData: NSObject {
         
         if let likes = valueDictionary["likes"] as? [String] {
             self.likes = likes
-            for likeId in self.likes {
-                if likeId == myId {
-                    self.isLiked = true
-                    break
-                }
+        }
+        
+        for likeId in self.likes {
+            if likeId == myId {
+                self.isLiked = true
+                break
             }
         }
     }
