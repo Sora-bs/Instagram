@@ -6,22 +6,22 @@
 //  Copyright © 2019 sora. All rights reserved.
 //
 
-import UIKit
-import Firebase
-
-class CommentData: NSObject {
-
-    var id: String?
-    var name: String?
-    var comments:String?
-    
-    init(snapshot: DataSnapshot, myId: String) {
-        self.id = snapshot.key
-        
-        let valueDictionary = snapshot.value as! [String: Any]
-        
-        self.name = valueDictionary["name"] as? String
-        self.comments = valueDictionary["comments"] as? String
-        
-    }
-}
+//import UIKit
+//import Firebase
+//
+//class CommentData: NSObject {
+//
+//    var id: String?
+//    var name: String?
+//    var comments:String?
+//
+//    init(snapshot: DataSnapshot, myId: String) {
+//        self.id = snapshot.key
+//
+//        let valueDictionary = snapshot.value as! [String: Any]
+//
+//        self.name = valueDictionary["name"] as? String
+//        self.comments = valueDictionary["comments"] as? String
+//
+//    }
+//}

@@ -12,12 +12,13 @@ import SVProgressHUD
 
 class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
-    var commentArray: [CommentData] = []
+    var commentArray: [PostData] = []
+    
+    var postData:PostData!
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var commentTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,13 @@ class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewD
         
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return commentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath)
+        
         return cell
     }
     
@@ -51,15 +52,16 @@ class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewD
         commentTextField.resignFirstResponder()
     }
     
-    
     @IBAction func commentButton(_ sender: Any) {
-        view.endEditing(true)
+        //ボタンを押した時にキーボードを閉じる
+        view.endEditing(true)        
         
         let name = Auth.auth().currentUser?.displayName
          //辞書を作成してFirebaseに保存する
-        let commentRef = Database.database().reference().child(Const.CommentPath)
-        let commentDic = ["comments": commentTextField.text!, "name": name!]
-        commentRef.childByAutoId().setValue(commentDic)
+        let commentRef = Database.database().reference().child(Const.PostPath).child(postData.id!).child("comments")
+        let commentDic = ["comment": commentTextField.text!, "name": name!]
+//        commentRef.childByAutoId().setValue(commentDic)
+        commentRef.updateChildValues(commentDic)
 
         print("DEBUG_PRINT:\(name!)がコメントしました。")
         print("DEBUG_PRINT:\(commentTextField.text!)が送信されました。")
@@ -68,7 +70,6 @@ class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewD
         
          //HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "コメントを投稿しました")
-        
         
         self.tableView.reloadData()
     }
@@ -80,7 +81,6 @@ class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpNotificationForTextField()
-
     }
     
     internal func setUpNotificationForTextField() {
@@ -107,6 +107,5 @@ class CommentViewController: UIViewController, UITextFieldDelegate, UITableViewD
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         }, completion: nil)
     }
-    
     
 }

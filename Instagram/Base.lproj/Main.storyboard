@@ -226,6 +226,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="EzS-zs-pdr" id="yMH-wz-ZO2"/>
+                        <segue destination="ehN-5n-h8o" kind="show" identifier="cellSegue" id="5GF-J5-A4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wU8-Ui-qb9" userLabel="First Responder" sceneMemberID="firstResponder"/>

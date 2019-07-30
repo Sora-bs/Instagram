@@ -160,15 +160,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
     }
-
     
     @objc func commentBtn(_ sender: UIButton, forEvent event: UIEvent) {
-                
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
         let storyboard: UIStoryboard = self.storyboard!
-        let commentView = storyboard.instantiateViewController(withIdentifier: "Comment")
+        let commentView = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        commentView.postData = postData
+        
         self.present(commentView, animated: true, completion: nil)
         
     }
-    
-    
 }
